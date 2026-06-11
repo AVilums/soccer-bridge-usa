@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import logo from './assets/logo.jpeg'
+import logo from './assets/logo.png'
 
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(false)
