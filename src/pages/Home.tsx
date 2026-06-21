@@ -4,16 +4,43 @@ import { useReveal } from '../hooks/useReveal';
 export function Home() {
   useReveal();
 
-  const handleSubmit = (e: React.FormEvent, msg: string) => {
+  const handleSubmit = async (e: React.FormEvent, msg: string) => {
     e.preventDefault();
-    const btn = e.currentTarget.querySelector('button') as HTMLButtonElement;
+    const form = e.currentTarget as HTMLFormElement;
+    const btn = form.querySelector('button') as HTMLButtonElement;
     if (!btn) return;
 
     const originalText = btn.innerHTML;
-    btn.innerHTML = `✓ ${msg}!`;
     const originalBg = btn.style.background;
-    btn.style.background = "#00A344";
+    
+    btn.innerHTML = "Sending...";
     btn.disabled = true;
+
+    try {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: msg,
+          ...data
+        }),
+      });
+
+      if (response.ok) {
+        btn.innerHTML = `✓ ${msg}!`;
+        btn.style.background = "#00A344";
+        form.reset();
+      } else {
+        throw new Error('Failed to send');
+      }
+    } catch (err) {
+      btn.innerHTML = "Error! Try again";
+      btn.style.background = "#E3263A";
+      btn.disabled = false;
+    }
 
     setTimeout(() => {
       btn.innerHTML = originalText;
@@ -36,15 +63,15 @@ export function Home() {
             <div className="form-sub">Fill out this form and we will reach out within 24 hours.</div>
             <form onSubmit={(e) => handleSubmit(e, 'Application Submitted')}>
               <div className="f-row">
-                <div className="f-group"><label>First Name</label><input type="text" placeholder="" required /></div>
-                <div className="f-group"><label>Last Name</label><input type="text" placeholder="" required /></div>
+                <div className="f-group"><label>First Name</label><input type="text" name="firstName" placeholder="" required /></div>
+                <div className="f-group"><label>Last Name</label><input type="text" name="lastName" placeholder="" required /></div>
               </div>
-              <div className="f-group"><label>Email</label><input type="email" placeholder="you@email.com" required /></div>
-              <div className="f-group"><label>Phone Number</label><input type="tel" placeholder="" required /></div>
+              <div className="f-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required /></div>
+              <div className="f-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="" required /></div>
               <div className="f-row">
                 <div className="f-group">
                   <label>Class Of</label>
-                  <select required>
+                  <select name="classOf" required>
                     <option value="">Select year</option>
                     <option>2025</option><option>2026</option><option>2027</option>
                     <option>2028</option><option>2029</option><option>2030</option>
@@ -52,7 +79,7 @@ export function Home() {
                 </div>
                 <div className="f-group">
                   <label>Club Name</label>
-                  <input type="text" placeholder="" required />
+                  <input type="text" name="clubName" placeholder="" required />
                 </div>
               </div>
               <button type="submit" className="btn btn-primary btn-submit-hero">
@@ -157,11 +184,11 @@ export function Home() {
           <div className="reveal">
             <form onSubmit={(e) => handleSubmit(e, 'Message Sent')}>
               <div className="fc-row">
-                <div className="fc-group"><label>Full Name</label><input type="text" placeholder="" required /></div>
-                <div className="fc-group"><label>Email</label><input type="email" placeholder="you@email.com" required /></div>
+                <div className="fc-group"><label>Full Name</label><input type="text" name="fullName" placeholder="" required /></div>
+                <div className="fc-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required /></div>
               </div>
-              <div className="fc-group"><label>Phone (optional)</label><input type="tel" placeholder="" /></div>
-              <div className="fc-group"><label>Message</label><textarea placeholder="Your question or message..." required></textarea></div>
+              <div className="fc-group"><label>Phone (optional)</label><input type="tel" name="phone" placeholder="" /></div>
+              <div className="fc-group"><label>Message</label><textarea name="message" placeholder="Your question or message..." required></textarea></div>
               <button type="submit" className="btn btn-primary btn-card">
                 Send Message <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
