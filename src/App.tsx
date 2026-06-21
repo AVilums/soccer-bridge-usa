@@ -41,11 +41,11 @@ function App() {
           <img src={logo} alt="Soccer Bridge USA" />
         </a>
         <div className={`nav-links ${isNavOpen ? 'open' : ''}`} id="navLinks">
-          <a href="#about" onClick={() => setIsNavOpen(false)}>About</a>
-          <a href="#how" onClick={() => setIsNavOpen(false)}>How It Works</a>
-          <a href="#services" onClick={() => setIsNavOpen(false)}>Services</a>
-          <a href="#contact" onClick={() => setIsNavOpen(false)}>Contact</a>
-          <a href="#apply" className="nav-cta" onClick={() => setIsNavOpen(false)}>Apply Now</a>
+          <a href={"#about"} onClick={() => setIsNavOpen(false)}>About</a>
+          <a href={"#how"} onClick={() => setIsNavOpen(false)}>How It Works</a>
+          <a href={"#services"} onClick={() => setIsNavOpen(false)}>Services</a>
+          <a href={"#contact"} onClick={() => setIsNavOpen(false)}>Contact</a>
+          <a href={"#apply"} className="nav-cta" onClick={() => setIsNavOpen(false)}>Apply Now</a>
         </div>
         <button className="hamburger" onClick={() => setIsNavOpen(!isNavOpen)}>
           <span></span><span></span><span></span>
@@ -61,14 +61,14 @@ function App() {
           </div>
           <div className="hero-form">
             <h2>START YOUR JOURNEY</h2>
-            <div className="form-sub">Fill out this quick form and we will reach out within 24 hours.</div>
+            <div className="form-sub">Fill out this form and we will reach out within 24 hours.</div>
             <form onSubmit={(e) => handleSubmit(e, 'Application Submitted')}>
               <div className="f-row">
-                <div className="f-group"><label>First Name</label><input type="text" placeholder="John" required /></div>
-                <div className="f-group"><label>Last Name</label><input type="text" placeholder="Smith" required /></div>
+                <div className="f-group"><label>First Name</label><input type="text" placeholder="" required /></div>
+                <div className="f-group"><label>Last Name</label><input type="text" placeholder="" required /></div>
               </div>
               <div className="f-group"><label>Email</label><input type="email" placeholder="you@email.com" required /></div>
-              <div className="f-group"><label>Phone Number</label><input type="tel" placeholder="+1 (555) 000 0000" required /></div>
+              <div className="f-group"><label>Phone Number</label><input type="tel" placeholder="" required /></div>
               <div className="f-row">
                 <div className="f-group">
                   <label>Class Of</label>
@@ -79,12 +79,8 @@ function App() {
                   </select>
                 </div>
                 <div className="f-group">
-                  <label>Position</label>
-                  <select required>
-                    <option value="">Select position</option>
-                    <option>Goalkeeper</option><option>Defender</option>
-                    <option>Midfielder</option><option>Forward</option>
-                  </select>
+                  <label>Club Name</label>
+                  <input type="email" placeholder="" required />
                 </div>
               </div>
               <button type="submit" className="btn btn-primary btn-submit-hero">
@@ -132,19 +128,19 @@ function App() {
         <div className="section-sub reveal">Everything you need to make the move from international soccer to a U.S. college team.</div>
         <div className="services-grid">
           <div className="service-card reveal">
-            <div className="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg></div>
+            <div className="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg></div>
             <div><h3>Highlight Video Production</h3><p>Professional quality player reels edited to showcase your strengths and catch a coach's eye.</p></div>
           </div>
           <div className="service-card reveal">
-            <div className="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" /></svg></div>
+            <div className="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" /></svg></div>
             <div><h3>Coach Outreach</h3><p>Direct contact and relationship building with college coaches across NCAA, NAIA, and NJCAA programs.</p></div>
           </div>
           <div className="service-card reveal">
-            <div className="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" /></svg></div>
+            <div className="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" /></svg></div>
             <div><h3>Academic Guidance</h3><p>SAT/ACT prep support, transcript evaluation, English proficiency guidance, and eligibility clearance.</p></div>
           </div>
           <div className="service-card reveal">
-            <div className="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg></div>
+            <div className="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg></div>
             <div><h3>Scholarship Negotiation</h3><p>We advocate on your behalf to secure the best possible athletic and academic scholarship package.</p></div>
           </div>
         </div>
@@ -153,7 +149,7 @@ function App() {
       <section className="cta-section">
         <div className="cta-box reveal">
           <div className="section-title">Your American Dream<br />Starts Here</div>
-          <a href="#apply" className="btn btn-primary" style={{ marginTop: '8px' }}>Apply Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href={"#apply"} className="btn btn-primary" style={{ marginTop: '8px' }}>Apply Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </section>
 
@@ -171,10 +167,10 @@ function App() {
           <div className="reveal">
             <form onSubmit={(e) => handleSubmit(e, 'Message Sent')}>
               <div className="fc-row">
-                <div className="fc-group"><label>Full Name</label><input type="text" placeholder="Your name" required /></div>
+                <div className="fc-group"><label>Full Name</label><input type="text" placeholder="" required /></div>
                 <div className="fc-group"><label>Email</label><input type="email" placeholder="you@email.com" required /></div>
               </div>
-              <div className="fc-group"><label>Phone (optional)</label><input type="tel" placeholder="+1 (555) 000 0000" /></div>
+              <div className="fc-group"><label>Phone (optional)</label><input type="tel" placeholder="" /></div>
               <div className="fc-group"><label>Message</label><textarea placeholder="Your question or message..." required></textarea></div>
               <button type="submit" className="btn btn-primary btn-card">
                 Send Message <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
