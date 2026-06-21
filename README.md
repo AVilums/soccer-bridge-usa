@@ -4,7 +4,7 @@ This project is a React-based landing page for **Soccer Bridge USA**, a college 
 
 ## 🚀 Quick Start
 
-1. **Installs dependencies:**
+1. **Install dependencies:**
    ```bash
    npm install
    ```
