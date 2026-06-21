@@ -16,8 +16,8 @@ export async function onRequestPost(context) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Soccer Bridge USA <onboarding@resend.dev>',
-        to: 'soccerbridgeusa@gmail.com',
+        from: 'Soccer Bridge USA <noreply@usasoccerbridge.com>',
+        to: 'Rsterninieks9@gmail.com',
         subject: `New Lead: ${type}`,
         html: `<p>You received a new ${type.toLowerCase()} from <b>${email}</b>:</p>${fieldSummary}`,
       }),
