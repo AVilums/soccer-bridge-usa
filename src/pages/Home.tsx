@@ -1,8 +1,16 @@
 import logo from '../assets/logo.png';
+import bg1 from '../assets/m-soccer-1200x800.png';
+import bg2 from '../assets/mens-soccer-happy.jpg';
 import { useReveal } from '../hooks/useReveal';
+import { useMemo } from 'react';
 
 export function Home() {
   useReveal();
+
+  const heroBg = useMemo(() => {
+    const bgs = [bg1, bg2];
+    return bgs[Math.floor(Math.random() * bgs.length)];
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent, msg: string) => {
     e.preventDefault();
@@ -52,7 +60,7 @@ export function Home() {
   return (
     <>
       <section className="hero" id="apply">
-        <div className="hero-bg" id="hero-bg" style={{ backgroundImage: `url(${logo})` }}></div>
+        <div className="hero-bg" id="hero-bg" style={{ backgroundImage: `url(${heroBg})` }}></div>
         <div className="hero-inner">
           <div className="hero-content">
             <h1>YOUR TALENT.<br /><em>THEIR SCHOLARSHIP.</em><br />OUR BRIDGE.</h1>
@@ -103,8 +111,8 @@ export function Home() {
           </div>
           <div className="about-text reveal">
             <p>Soccer Bridge USA is a specialized college soccer recruitment agency dedicated to helping talented international players find their path to U.S. universities through athletic scholarships.</p>
-            <p>We understand the challenges of navigating the American college system from abroad. The eligibility requirements, the recruiting timelines, and the cultural differences. That is why we built a bridge between your talent and the opportunities waiting in the United States.</p>
-            <p>Our team works hands on with every player, from building standout profiles and highlight reels to connecting directly with college coaches across NCAA, NAIA, and NJCAA programs. We do not just find you a spot on a team. We find the right program where you will thrive both on the pitch and in the classroom.</p>
+            <p>Soccer Bridge USA was built from personal experience. Our founder played academy soccer in Latvia and represented Latvia's youth national teams before making the move to play college soccer in the United States. Along the way, he saw too many talented players miss out on scholarship opportunities, not because they weren't good enough, but because they simply didn't know how the process works.</p>
+            <p>That experience became the foundation for Soccer Bridge USA. Based in the Baltics and Portugal, we work closely with international players and their families, connecting them with NCAA, NAIA, and NJCAA programs that match their ability, academic goals, and ambitions. From there, we handle the complicated part of the journey, the research, the contacts, the communication, and the paperwork, so your talent can speak for itself and your path to a U.S. college scholarship is clear from day one.</p>
           </div>
           <div className="about-logo reveal"><img src={logo} alt="Soccer Bridge USA" /></div>
         </div>
@@ -113,27 +121,27 @@ export function Home() {
       <section className="how-it-works" id="how">
         <div className="section-label reveal">The Process</div>
         <div className="section-title reveal">How It Works</div>
-        <div className="section-sub reveal">Three simple steps from where you are now to a U.S. college soccer program.</div>
+        <div className="section-sub reveal">Simple on paper, personal in practice, here's how we get you there.</div>
         <div className="steps-grid">
           <div className="step-card reveal">
             <div className="step-num">01</div>
             <div>
               <h3>Player Assessment</h3>
-              <p>We review your highlight videos, stats, academic record, and goals to build a complete player profile that stands out to coaches.</p>
+              <p>We evaluate your game footage, athletic ability, academic background, and personal goals to create a strong player profile that gets coaches attention.</p>
             </div>
           </div>
           <div className="step-card reveal">
             <div className="step-num">02</div>
             <div>
               <h3>Program Matching</h3>
-              <p>Using our network of 1000+ schools, we match your talent and academic profile with the right programs and scholarship opportunities.</p>
+              <p>We evaluate your game footage, athletic ability, academic background, and personal goals to create a strong player profile that gets coaches attention.</p>
             </div>
           </div>
           <div className="step-card reveal">
             <div className="step-num">03</div>
             <div>
               <h3>Scholarship &amp; Enrollment</h3>
-              <p>We guide you through applications, coach communications, campus visits, and scholarship negotiations until you sign.</p>
+              <p>We evaluate your game footage, athletic ability, academic background, and personal goals to create a strong player profile that gets coaches attention.</p>
             </div>
           </div>
         </div>
@@ -142,23 +150,98 @@ export function Home() {
       <section id="services">
         <div className="section-label reveal">What We Do</div>
         <div className="section-title reveal">Our Services</div>
-        <div className="section-sub reveal">Everything you need to make the move from international soccer to a U.S. college team.</div>
+        <div className="section-sub reveal">From highlight reels to scholarship offers, here's everything we handle for you.</div>
         <div className="services-grid">
           <div className="service-card reveal">
-            <div className="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg></div>
-            <div><h3>Highlight Video Production</h3><p>Professional quality player reels edited to showcase your strengths and catch a coach's eye.</p></div>
+            <div className="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+              </svg>
+            </div>
+            <div>
+              <h3>Direct Coach Connections</h3>
+              <p>Through genuine relationships built across NCAA, NAIA, and NJCAA programs, we put your name in front of the right coaches in the right way.</p>
+            </div>
           </div>
           <div className="service-card reveal">
-            <div className="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" /></svg></div>
-            <div><h3>Coach Outreach</h3><p>Direct contact and relationship building with college coaches across NCAA, NAIA, and NJCAA programs.</p></div>
+            <div className="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+              </svg>
+            </div>
+            <div>
+              <h3>Player CV &amp; Athletic Profile</h3>
+              <p>A polished, shareable document covering your full athletic and academic story, written and designed to make the right first impression.</p>
+            </div>
           </div>
           <div className="service-card reveal">
-            <div className="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" /></svg></div>
-            <div><h3>Academic Guidance</h3><p>SAT/ACT prep support, transcript evaluation, English proficiency guidance, and eligibility clearance.</p></div>
+            <div className="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+            </div>
+            <div>
+              <h3>Highlight Video Production</h3>
+              <p>We handle the full editing and production of a professional highlight reel so you can focus on your game.</p>
+            </div>
           </div>
           <div className="service-card reveal">
-            <div className="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg></div>
-            <div><h3>Scholarship Negotiation</h3><p>We advocate on your behalf to secure the best possible athletic and academic scholarship package.</p></div>
+            <div className="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="3" />
+                <line x1="12" y1="2" x2="12" y2="4" />
+                <line x1="12" y1="20" x2="12" y2="22" />
+                <line x1="2" y1="12" x2="4" y2="12" />
+                <line x1="20" y1="12" x2="22" y2="12" />
+              </svg>
+            </div>
+            <div>
+              <h3>Targeted College Promotion</h3>
+              <p>We market your profile to programs that are the right fit, matching level, location, and major so every outreach is intentional.</p>
+            </div>
+          </div>
+          <div className="service-card reveal">
+            <div className="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <div>
+              <h3>Offer Evaluation &amp; Guidance</h3>
+              <p>From first offer to final decision, we help you read between the lines, compare what's on the table, and choose with clarity, not guesswork.</p>
+            </div>
+          </div>
+          <div className="service-card reveal">
+            <div className="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            </div>
+            <div>
+              <h3>Documentation &amp; Application Support</h3>
+              <p>We help you stay on top of every form, deadline, and requirement, from college applications to the paperwork needed for your move to the U.S.</p>
+            </div>
+          </div>
+          <div className="service-card reveal">
+            <div className="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+              </svg>
+            </div>
+            <div>
+              <h3>Direct Line to Your Agent</h3>
+              <p>You'll always know who to contact and where things stand, no waiting in a queue or guessing who's handling your case.</p>
+            </div>
           </div>
         </div>
       </section>

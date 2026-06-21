@@ -17,9 +17,21 @@ export function Navbar() {
     }
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setIsNavOpen(false);
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Clear hash from URL
+      if (window.location.hash) {
+        window.history.replaceState(null, '', '/');
+      }
+    }
+  };
+
   return (
     <nav>
-      <Link to="/" className="nav-logo" onClick={() => setIsNavOpen(false)}>
+      <Link to="/" className="nav-logo" onClick={handleLogoClick}>
         <img src={logo} alt="Soccer Bridge USA" />
       </Link>
       <div className={`nav-links ${isNavOpen ? 'open' : ''}`} id="navLinks">
