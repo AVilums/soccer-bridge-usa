@@ -19,7 +19,7 @@ export function Privacy() {
         <h3>Definitions</h3>
         <p>For the purposes of this Privacy Policy:</p>
         <ul>
-          <li><strong>Company</strong> ("We," "Us," or "Our") refers to SIA "Soccer Bridge USA", a company registered in the Republic of Latvia, registration No. [registration number], registered address Miera iela 87a, Riga, Latvia.</li>
+          <li><strong>Company</strong> ("We," "Us," or "Our") refers to SIA "Soccer Bridge USA", a company registered in the Republic of Latvia, registration No. 40203760373, registered address Miera iela 87a, Riga, Latvia.</li>
           <li><strong>Country</strong> refers to Latvia.</li>
           <li><strong>Personal Data</strong> means any information that relates to an identified or identifiable individual.</li>
           <li><strong>Service</strong> refers to the website, accessible from www.usasoccerbridge.com.</li>

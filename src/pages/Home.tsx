@@ -134,14 +134,14 @@ export function Home() {
             <div className="step-num">02</div>
             <div>
               <h3>Program Matching</h3>
-              <p>We evaluate your game footage, athletic ability, academic background, and personal goals to create a strong player profile that gets coaches attention.</p>
+              <p>We connect your profile with the right college programs from our network of 1000+ schools, identifying the best opportunities based on your level, ambitions, and academic fit.</p>
             </div>
           </div>
           <div className="step-card reveal">
             <div className="step-num">03</div>
             <div>
               <h3>Scholarship &amp; Enrollment</h3>
-              <p>We evaluate your game footage, athletic ability, academic background, and personal goals to create a strong player profile that gets coaches attention.</p>
+              <p>Once a program shows interest, we help you navigate the next steps, coach communication, understanding scholarship terms, paperwork, and deadlines, so nothing gets missed on your way to signing.</p>
             </div>
           </div>
         </div>

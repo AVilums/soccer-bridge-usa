@@ -18,7 +18,7 @@ export function Terms() {
         <h3>Definitions</h3>
         <p>For the purposes of these Terms and Conditions:</p>
         <ul>
-          <li><strong>Company</strong> ("We," "Us," or "Our") refers to SIA "Soccer Bridge USA", a company registered in the Republic of Latvia, registration No. [registration number], registered address Miera iela 87a, Riga, Latvia.</li>
+          <li><strong>Company</strong> ("We," "Us," or "Our") refers to SIA "Soccer Bridge USA", a company registered in the Republic of Latvia, registration No. 40203760373, registered address Miera iela 87a, Riga, Latvia.</li>
           <li><strong>Country</strong> refers to Latvia.</li>
           <li><strong>Device</strong> means any device that can access the Service, such as a computer, smartphone, or tablet.</li>
           <li><strong>Service</strong> refers to the website, accessible from www.usasoccerbridge.com.</li>
